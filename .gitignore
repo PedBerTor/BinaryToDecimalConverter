@@ -1,0 +1,68 @@
+# Ignore JetBrains Rider IDE files
+.idea/
+*.sln.iml
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Rider workspace and configuration files
+.idea_modules/
+*.iws
+*.ipr
+*.iml
+
+# Ignore .NET generated files
+*.vs/
+.vscode/
+.vs/
+*.dll
+*.exe
+*.log
+*.msi
+*.app
+*.pdb
+*.cache/
+*.so
+*.dylib
+*.class
+
+# Ignore packages
+*.nuget/
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignore coverage results
+TestResults/
+*.coverage
+*.coveragexml
+*.testlog
+
+# Ignore publish files
+*.publish/
+*.pubxml
+*.pubxml.user
+
+# Ignore WPF-specific files
+csproj.user
+*.xaml.*
+*.designer.cs
+
+# Ignore Resharper files (if applicable)
+_ReSharper/
+*.DotSettings.user
+_ReSharper.Caches/
+
+# Ignore other temporary files
+*.tmp
+*.temp
+~$*
