@@ -1,0 +1,47 @@
+﻿<Window x:Class="BinaryToDecimalConverter.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Binary To Decimal Converter" Height="450" Width="800"
+        Icon="/Images/icon.ico"
+        ResizeMode="NoResize"
+        FontSize="15">
+    <DockPanel LastChildFill="True">
+        <DockPanel DockPanel.Dock="Bottom">
+            <TextBlock DockPanel.Dock="Left" Padding="10" Text="Copyright (c) 2025 Pedro Bernaldez" FontSize="12" />
+            <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" Padding="10" FontSize="12">
+                <Hyperlink NavigateUri="https://github.com/PedBerTor/BinaryToDecimalConverter"
+                           RequestNavigate="AboutHyperlink_OnRequestNavigate" Cursor="Hand">
+                    About
+                </Hyperlink>
+            </TextBlock>
+        </DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
+                <Label Content="Converter implementation:" />
+                <ComboBox x:Name="ConverterSelector" Width="235" Height="30" VerticalContentAlignment="Center"
+                          Cursor="Hand"
+                          SelectionChanged="ConverterSelector_OnSelectionChanged">
+                    <ComboBoxItem IsSelected="True" Cursor="Hand" Content="Iterative positional notation" />
+                    <ComboBoxItem Cursor="Hand" Content="Functional positional notation" />
+                    <ComboBoxItem Cursor="Hand" Content="Iterative doubling" />
+                    <ComboBoxItem Cursor="Hand" Content="Functional doubling" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 40">
+                <TextBox x:Name="InputTextBox" Width="540" Height="30" MaxLength="63" VerticalContentAlignment="Center"
+                         PreviewKeyDown="InputTextBox_OnPreviewKeyDown" PreviewDrop="InputTextBox_OnPreviewDrop">
+                    <TextBox.CommandBindings>
+                        <CommandBinding Command="ApplicationCommands.Paste" Executed="InputTextBox_OnPaste" />
+                    </TextBox.CommandBindings>
+                </TextBox>
+                <Button Width="80" Height="30" Margin="10 0" Cursor="Hand" Content="Convert"
+                        Click="ConvertButton_OnClick" />
+            </StackPanel>
+            <TextBlock x:Name="ResultTextBlock" Margin="0 10" TextAlignment="Center" />
+            <TextBlock x:Name="TimeTookTextBlock" TextAlignment="Center" />
+        </StackPanel>
+    </DockPanel>
+</Window>
